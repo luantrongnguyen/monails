@@ -245,7 +245,7 @@ const Shop: React.FC = () => {
 
           <div className="row">
             {products.map((product) => (
-              <div key={product.id} className="col-12 col-sm-6 col-md-12 col-xl-6">
+              <div key={product.id} className="col-6 col-sm-6 col-md-4 col-xl-4">
                 <div className="single-product-wrapper">
                   <div className="product-img">
                     <Link to={`/product/${product.id}`}>

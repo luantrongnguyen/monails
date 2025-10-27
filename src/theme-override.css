@@ -365,3 +365,129 @@
     column-count: 2 !important;
   }
 }
+
+/* Bỏ khoảng cách giữa các hình ảnh trong Home */
+.single-products-catagory {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+.amado-pro-catagory {
+  column-gap: 0 !important;
+}
+
+.products-catagories-area {
+  padding: 0 !important;
+}
+
+.single-products-catagory img {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+.single-products-catagory a {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Bỏ khoảng cách của hover content */
+.single-products-catagory .hover-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Bỏ khoảng cách và filter xen kẽ */
+.products-catagories-area .amado-pro-catagory .single-products-catagory {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.products-catagories-area .amado-pro-catagory .single-products-catagory img {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.products-catagories-area .amado-pro-catagory .single-products-catagory a {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.products-catagories-area .amado-pro-catagory .single-products-catagory .hover-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Filter transparent màu đen xen kẽ */
+.single-products-catagory:nth-child(odd) img {
+  filter: brightness(0.7) !important;
+}
+
+/* Giảm khoảng cách 2 cột trên mobile */
+@media (max-width: 767px) {
+  .amado_product_area .row {
+    margin-left: -5px !important;
+    margin-right: -5px !important;
+  }
+  
+  .amado_product_area .col-6 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+}
+
+/* Bỏ hoàn toàn khoảng cách giữa các item */
+* {
+  box-sizing: border-box !important;
+}
+
+/* Thêm lại khoảng cách 2 bên 8px và bỏ khoảng cách trên dưới */
+.single-products-catagory {
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+
+.products-catagories-area .amado-pro-catagory .single-products-catagory {
+  margin: 0 !important;
+  padding: 4px !important;
+  margin-bottom: -8px !important;
+}
+
+.single-products-catagory img {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  display: block !important;
+}
+
+.single-products-catagory a {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  display: block !important;
+}
+
+.amado-pro-catagory {
+  column-gap: 0 !important;
+  row-gap: 0 !important;
+}

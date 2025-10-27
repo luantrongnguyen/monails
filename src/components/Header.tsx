@@ -50,9 +50,9 @@ const Header: React.FC = () => {
             <li className={isActive('/')}>
               <Link to="/">Home</Link>
             </li>
-            {/* <li className={isActive('/shop')}>
+            <li className={isActive('/shop')}>
               <Link to="/shop">Shop</Link>
-            </li> */}
+            </li>
             {/* <li className={isActive('/product')}>
               <Link to="/product/1">Product</Link>
             </li> */}
