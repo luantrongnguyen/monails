@@ -28,8 +28,14 @@ const Header: React.FC = () => {
             <img src="/img/core-img/logo.png" alt="Amado Logo" />
           </Link>
         </div>
-        <div className="amado-navbar-toggler" onClick={toggleMenu}>
-          <span></span><span></span><span></span>
+        <div className="mobile-nav-right">
+          <Link to="/cart" className="mobile-cart-icon">
+            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span className="cart-count">{state.totalItems}</span>
+          </Link>
+          <div className="amado-navbar-toggler" onClick={toggleMenu}>
+            <span></span><span></span><span></span>
+          </div>
         </div>
       </div>
 
@@ -48,38 +54,38 @@ const Header: React.FC = () => {
         <nav className="amado-nav">
           <ul>
             <li className={isActive('/')}>
-              <Link to="/">Home</Link>
+              <Link to="/">Trang chủ</Link>
             </li>
             <li className={isActive('/shop')}>
-              <Link to="/shop">Shop</Link>
+              <Link to="/shop">Cửa hàng</Link>
             </li>
             {/* <li className={isActive('/product')}>
               <Link to="/product/1">Product</Link>
             </li> */}
             <li className={isActive('/cart')}>
-              <Link to="/cart">Cart</Link>
+              <Link to="/cart">Giỏ hàng</Link>
             </li>
             <li className={isActive('/checkout')}>
-              <Link to="/checkout">Checkout</Link>
+              <Link to="/checkout">Thanh toán</Link>
             </li>
           </ul>
         </nav>
         
-        <div className="amado-btn-group mt-30 mb-100">
+        {/* <div className="amado-btn-group mt-30 mb-100">
           <a href="#" className="btn amado-btn mb-15">%Discount%</a>
           <a href="#" className="btn amado-btn active">New this week</a>
-        </div>
+        </div> */}
         
         <div className="cart-fav-search mb-100">
           <Link to="/cart" className="cart-nav">
-            <img src="/img/core-img/cart.png" alt="Cart" /> Cart <span>({state.totalItems})</span>
+            <img src="/img/core-img/cart.png" alt="Cart" /> Giỏ hàng <span>({state.totalItems})</span>
           </Link>
-          <a href="#" className="fav-nav">
+          {/* <a href="#" className="fav-nav">
             <img src="/img/core-img/favorites.png" alt="Favorites" /> Favourite
           </a>
           <a href="#" className="search-nav">
             <img src="/img/core-img/search.png" alt="Search" /> Search
-          </a>
+          </a> */}
         </div>
         
         <div className="social-info d-flex justify-content-between">

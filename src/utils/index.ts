@@ -2,7 +2,7 @@ import { Product, CartItem, Category, Brand, Color } from '../types';
 
 // Product utilities
 export const formatPrice = (price: number): string => {
-  return `$${price.toFixed(2)}`;
+  return `${price.toLocaleString('vi-VN')} đ`;
 };
 
 export const calculateDiscount = (originalPrice: number, discountPercent: number): number => {

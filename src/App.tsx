@@ -6,6 +6,7 @@ import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import { CartProvider } from './contexts/CartContext';
 import './App.css';
 import './theme-override.css';
@@ -14,6 +15,7 @@ function App() {
   return (
     <CartProvider>
       <Router>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />

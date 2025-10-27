@@ -9,13 +9,21 @@ const Cart: React.FC = () => {
   const delivery = 0; // Free delivery
   const total = totalPrice + delivery;
 
+  const handleQuantityChange = (productId: number, newQuantity: number) => {
+    if (newQuantity <= 0) {
+      removeFromCart(productId);
+    } else {
+      updateQuantity(productId, newQuantity);
+    }
+  };
+
   return (
     <div className="cart-table-area section-padding-100">
       <div className="container-fluid">
         <div className="row">
           <div className="col-12 col-lg-8">
             <div className="cart-title mt-50">
-              <h2>Shopping Cart</h2>
+              <h2>Giỏ hàng</h2>
             </div>
 
             <div className="cart-table clearfix">
@@ -23,10 +31,9 @@ const Cart: React.FC = () => {
                 <thead>
                   <tr>
                     <th></th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Action</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -41,43 +48,33 @@ const Cart: React.FC = () => {
                         <h5>{item.product.name}</h5>
                       </td>
                       <td className="price">
-                        <span>${item.product.price}</span>
+                        <span>{item.product.price.toLocaleString('vi-VN')} đ</span>
                       </td>
                       <td className="qty">
-                        <div className="qty-btn d-flex">
-                          <p>Qty</p>
-                          <div className="quantity">
-                            <span 
-                              className="qty-minus" 
-                              onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                            >
-                              <i className="fa fa-minus" aria-hidden="true"></i>
-                            </span>
-                            <input 
-                              type="number" 
-                              className="qty-text" 
-                              value={item.quantity}
-                              onChange={(e) => {
-                                const newQuantity = parseInt(e.target.value) || 1;
-                                updateQuantity(item.product.id, newQuantity);
-                              }}
-                            />
-                            <span 
-                              className="qty-plus" 
-                              onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                            >
-                              <i className="fa fa-plus" aria-hidden="true"></i>
-                            </span>
-                          </div>
+                        <div className="quantity-controls d-flex align-items-center">
+                          <button 
+                            className="qty-btn-minus"
+                            onClick={() => handleQuantityChange(item.product.id, item.quantity - 1)}
+                          >
+                            <i className="fa fa-minus" aria-hidden="true"></i>
+                          </button>
+                          <input 
+                            type="number" 
+                            className="qty-input" 
+                            value={item.quantity}
+                            min="1"
+                            onChange={(e) => {
+                              const newQuantity = parseInt(e.target.value) || 1;
+                              handleQuantityChange(item.product.id, newQuantity);
+                            }}
+                          />
+                          <button 
+                            className="qty-btn-plus"
+                            onClick={() => handleQuantityChange(item.product.id, item.quantity + 1)}
+                          >
+                            <i className="fa fa-plus" aria-hidden="true"></i>
+                          </button>
                         </div>
-                      </td>
-                      <td>
-                        <button 
-                          className="btn btn-danger btn-sm"
-                          onClick={() => removeFromCart(item.product.id)}
-                        >
-                          Remove
-                        </button>
                       </td>
                     </tr>
                   ))}
@@ -88,15 +85,15 @@ const Cart: React.FC = () => {
           
           <div className="col-12 col-lg-4">
             <div className="cart-summary">
-              <h5>Cart Total</h5>
+              <h5>Tổng giỏ hàng</h5>
               <ul className="summary-table">
-                <li><span>subtotal:</span> <span>${totalPrice.toFixed(2)}</span></li>
-                <li><span>delivery:</span> <span>{delivery === 0 ? 'Free' : `$${delivery.toFixed(2)}`}</span></li>
-                <li><span>total:</span> <span>${total.toFixed(2)}</span></li>
+                <li><span>Tạm tính:</span> <span>{totalPrice.toLocaleString('vi-VN')} đ</span></li>
+                <li><span>Phí vận chuyển:</span> <span>{delivery === 0 ? 'Miễn phí' : `${delivery.toLocaleString('vi-VN')} đ`}</span></li>
+                <li><span>Tổng cộng:</span> <span>{total.toLocaleString('vi-VN')} đ</span></li>
               </ul>
               <div className="cart-btn mt-100">
                 <Link to="/checkout" className="btn amado-btn w-100">
-                  Checkout
+                  Thanh toán
                 </Link>
               </div>
             </div>

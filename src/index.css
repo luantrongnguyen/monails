@@ -2,6 +2,28 @@
 @import '../css/core-style.css';
 @import '../style.css';
 
+/* Vietnamese font support */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* FontAwesome icon font fix */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+  font-family: 'Inter', 'helveticaneuemedium', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Ensure FontAwesome icons display correctly */
+.fa {
+  font-family: 'FontAwesome' !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
 /* Additional styles for React components */
 #root {
   min-height: 100vh;
@@ -9,12 +31,12 @@
 
 /* Fix for React Router active links */
 .nav-link.active {
-  color: #FF8DA1 !important;
+  color: #F4D03F !important;
 }
 
 /* Ensure proper styling for React components */
 .amado-nav ul li a.active {
-  color: #FF8DA1;
+  color: #F4D03F;
 }
 
 /* Mobile menu toggle styles */
@@ -36,8 +58,8 @@
 }
 
 .form-control:focus {
-  border-color: #FF8DA1;
-  box-shadow: 0 0 0 0.2rem rgba(255, 141, 161, 0.25);
+  border-color: #F4D03F;
+  box-shadow: 0 0 0 0.2rem rgba(244, 208, 63, 0.25);
 }
 
 /* Button styles */
@@ -64,8 +86,8 @@
 
 /* Custom checkbox styles */
 .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: #FF8DA1;
-  border-color: #FF8DA1;
+  background-color: #F4D03F;
+  border-color: #F4D03F;
 }
 
 /* Quantity input styles */
@@ -177,7 +199,7 @@
 .single-products-catagory .hover-content .line {
   width: 80px;
   height: 3px;
-  background-color: #FF8DA1;
+  background-color: #F4D03F;
   display: block;
   margin-bottom: 15px;
 }

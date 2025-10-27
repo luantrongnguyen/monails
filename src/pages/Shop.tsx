@@ -1,89 +1,108 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Product, Brand, Color } from '../types';
 import { useCart } from '../contexts/CartContext';
 
 const Shop: React.FC = () => {
-  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>(['monails']);
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
-  const [priceRange, setPriceRange] = useState({ min: 10, max: 1000 });
+  const [priceRange, setPriceRange] = useState({ min: 50000, max: 100000 });
+  const [addingToCart, setAddingToCart] = useState<number | null>(null);
   const { addToCart } = useCart();
 
   const products: Product[] = [
     {
       id: 1,
-      name: 'Modern Chair',
-      price: 180,
-      image: '/img/product-img/product1.jpg',
-      hoverImage: '/img/product-img/product2.jpg',
-      category: 'Chairs',
-      brand: 'Amado',
+      name: 'Nail Box 1',
+      price: 69000,
+      image: '/img/product-img/z7159612792004_ff71b03a9c8bf65ed7167286319f3d8d.jpg',
+      hoverImage: '/img/product-img/z7159612794262_2380dfa3223fefa4c9a1407d37bace9e.jpg',
+      category: 'Nail Box',
+      brand: 'Mơ Nails',
       rating: 5,
       inStock: true,
     },
     {
       id: 2,
-      name: 'Modern Chair',
-      price: 180,
-      image: '/img/product-img/product2.jpg',
-      hoverImage: '/img/product-img/product3.jpg',
-      category: 'Chairs',
-      brand: 'Amado',
+      name: 'Nail Box 2',
+      price: 79000,
+      image: '/img/product-img/z7159612805680_a58703fa58442c47920074e37394a7b8.jpg',
+      hoverImage: '/img/product-img/z7159612808415_0a370ffaba7d1f90011f91ce54f743de.jpg',
+      category: 'Nail Box',
+      brand: 'Mơ Nails',
       rating: 5,
       inStock: true,
     },
     {
       id: 3,
-      name: 'Modern Chair',
-      price: 180,
-      image: '/img/product-img/product3.jpg',
-      hoverImage: '/img/product-img/product4.jpg',
-      category: 'Chairs',
-      brand: 'Amado',
+      name: 'Nail Box 3',
+      price: 59000,
+      image: '/img/product-img/z7159612822258_cf8b4352f471689c52a9fc3a2f9d0eac.jpg',
+      hoverImage: '/img/product-img/z7159612826644_6d3dd1b4b3393a16f3d3e35d1a642dd8.jpg',
+      category: 'Nail Box',
+      brand: 'Mơ Nails',
       rating: 5,
       inStock: true,
     },
     {
       id: 4,
-      name: 'Modern Chair',
-      price: 180,
-      image: '/img/product-img/product4.jpg',
-      hoverImage: '/img/product-img/product5.jpg',
-      category: 'Chairs',
-      brand: 'Amado',
+      name: 'Nail Box 4',
+      price: 69000,
+      image: '/img/product-img/z7159612833753_a1139047b43deee66a16e46647d2b4e8.jpg',
+      hoverImage: '/img/product-img/z7159612844937_c6b50e9875cca725a7d171148eae3d3c.jpg',
+      category: 'Nail Box',
+      brand: 'Mơ Nails',
       rating: 5,
       inStock: true,
     },
     {
       id: 5,
-      name: 'Modern Chair',
-      price: 180,
-      image: '/img/product-img/product5.jpg',
-      hoverImage: '/img/product-img/product6.jpg',
-      category: 'Chairs',
-      brand: 'Amado',
+      name: 'Nail Box 5',
+      price: 79000,
+      image: '/img/product-img/z7159612848482_70f83796011d1bf38de13b8def02f157.jpg',
+      hoverImage: '/img/product-img/z7159612851370_f2a5c16e47034bf31bed281c7f938638.jpg',
+      category: 'Nail Box',
+      brand: 'Mơ Nails',
       rating: 5,
       inStock: true,
     },
     {
       id: 6,
-      name: 'Modern Chair',
-      price: 180,
-      image: '/img/product-img/product6.jpg',
-      hoverImage: '/img/product-img/product1.jpg',
-      category: 'Chairs',
-      brand: 'Amado',
+      name: 'Nail Box 6',
+      price: 59000,
+      image: '/img/product-img/z7159612862218_5b05292c63f1e58c1b2d1882cb735c4c.jpg',
+      hoverImage: '/img/product-img/z7159612871440_294cc9054c5d4a827706afe431758e01.jpg',
+      category: 'Nail Box',
+      brand: 'Mơ Nails',
+      rating: 5,
+      inStock: true,
+    },
+    {
+      id: 7,
+      name: 'Nail Box 7',
+      price: 69000,
+      image: '/img/product-img/z7159612874839_9da0136a3cba3217dda731f670f95d6d.jpg',
+      hoverImage: '/img/product-img/z7159612882359_f0c85bd3843d40f6c5de9a196c1892bd.jpg',
+      category: 'Nail Box',
+      brand: 'Mơ Nails',
+      rating: 5,
+      inStock: true,
+    },
+    {
+      id: 8,
+      name: 'Nail Box 8',
+      price: 79000,
+      image: '/img/product-img/z7159612886036_c81b168e2b198cc54225831cddee5c12.jpg',
+      hoverImage: '/img/product-img/z7159612900641_4530baef02d721bbb4e7cfb33d5f211c.jpg',
+      category: 'Nail Box',
+      brand: 'Mơ Nails',
       rating: 5,
       inStock: true,
     },
   ];
 
   const brands: Brand[] = [
-    { id: 'amado', name: 'Amado' },
-    { id: 'ikea', name: 'Ikea' },
-    { id: 'furniture', name: 'Furniture Inc' },
-    { id: 'factory', name: 'The factory' },
-    { id: 'artdeco', name: 'Artdeco' },
+    { id: 'monails', name: 'Mơ Nails' },
   ];
 
   const colors: Color[] = [
@@ -97,14 +116,16 @@ const Shop: React.FC = () => {
     { id: 'color8', name: 'Color 8', value: '#color8' },
   ];
 
-  const categories = ['Chairs', 'Beds', 'Accesories', 'Furniture', 'Home Deco', 'Dressings', 'Tables'];
+  const categories = ['Nails Box'];
 
-  const handleBrandChange = (brandId: string) => {
-    setSelectedBrands(prev => 
-      prev.includes(brandId) 
-        ? prev.filter(id => id !== brandId)
-        : [...prev, brandId]
-    );
+  const handleAddToCart = (product: Product) => {
+    setAddingToCart(product.id);
+    addToCart(product, 1);
+    
+    // Reset animation after 600ms
+    setTimeout(() => {
+      setAddingToCart(null);
+    }, 600);
   };
 
   const handleColorChange = (colorId: string) => {
@@ -121,12 +142,23 @@ const Shop: React.FC = () => {
     ));
   };
 
+  // Filter products based on selected filters
+  const filteredProducts = products.filter(product => {
+    // Filter by price range
+    const priceInRange = product.price >= priceRange.min && product.price <= priceRange.max;
+    
+    // Filter by brands - since all products are "Mơ Nails" and selectedBrands contains "monails"
+    const brandMatch = selectedBrands.length === 0 || selectedBrands.includes('monails');
+    
+    return priceInRange && brandMatch;
+  });
+
   return (
     <>
       <div className="shop_sidebar_area">
         {/* Categories Widget */}
         <div className="widget catagory mb-50">
-          <h6 className="widget-title mb-30">Catagories</h6>
+          <h6 className="widget-title mb-30">Danh mục</h6>
           <div className="catagories-menu">
             <ul>
               {categories.map((category, index) => (
@@ -140,7 +172,7 @@ const Shop: React.FC = () => {
 
         {/* Brands Widget */}
         <div className="widget brands mb-50">
-          <h6 className="widget-title mb-30">Brands</h6>
+          <h6 className="widget-title mb-30">Thương hiệu</h6>
           <div className="widget-desc">
             {brands.map((brand) => (
               <div key={brand.id} className="form-check">
@@ -148,10 +180,10 @@ const Shop: React.FC = () => {
                   className="form-check-input"
                   type="checkbox"
                   id={brand.id}
-                  checked={selectedBrands.includes(brand.id)}
-                  onChange={() => handleBrandChange(brand.id)}
+                  checked={true}
+                  disabled={true}
                 />
-                <label className="form-check-label" htmlFor={brand.id}>
+                <label className="form-check-label" htmlFor={brand.id} style={{ color: '#F4D03F', fontWeight: 'bold' }}>
                   {brand.name}
                 </label>
               </div>
@@ -161,7 +193,7 @@ const Shop: React.FC = () => {
 
         {/* Color Widget */}
         <div className="widget color mb-50">
-          <h6 className="widget-title mb-30">Color</h6>
+          <h6 className="widget-title mb-30">Màu sắc</h6>
           <div className="widget-desc">
             <ul className="d-flex">
               {colors.map((color) => (
@@ -182,23 +214,33 @@ const Shop: React.FC = () => {
 
         {/* Price Widget */}
         <div className="widget price mb-50">
-          <h6 className="widget-title mb-30">Price</h6>
+          <h6 className="widget-title mb-30">Giá</h6>
           <div className="widget-desc">
             <div className="slider-range">
-              <div 
-                data-min="10" 
-                data-max="1000" 
-                data-unit="$" 
-                className="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" 
-                data-value-min="10" 
-                data-value-max="1000" 
-                data-label-result=""
-              >
-                <div className="ui-slider-range ui-widget-header ui-corner-all"></div>
-                <span className="ui-slider-handle ui-state-default ui-corner-all" tabIndex={0}></span>
-                <span className="ui-slider-handle ui-state-default ui-corner-all" tabIndex={0}></span>
+              <div className="range-slider-container">
+                <input 
+                  type="range" 
+                  min="50000" 
+                  max="100000" 
+                  step="1000"
+                  value={priceRange.min}
+                  onChange={(e) => setPriceRange(prev => ({ ...prev, min: parseInt(e.target.value) }))}
+                  className="range-slider range-slider-min"
+                />
+                <input 
+                  type="range" 
+                  min="50000" 
+                  max="100000" 
+                  step="1000"
+                  value={priceRange.max}
+                  onChange={(e) => setPriceRange(prev => ({ ...prev, max: parseInt(e.target.value) }))}
+                  className="range-slider range-slider-max"
+                />
+                <div className="range-track"></div>
               </div>
-              <div className="range-price">${priceRange.min} - ${priceRange.max}</div>
+              <div className="range-price">
+                {priceRange.min.toLocaleString('vi-VN')} đ - {priceRange.max.toLocaleString('vi-VN')} đ
+              </div>
             </div>
           </div>
         </div>
@@ -210,41 +252,21 @@ const Shop: React.FC = () => {
             <div className="col-12">
               <div className="product-topbar d-xl-flex align-items-end justify-content-between">
                 <div className="total-products">
-                  <p>Showing 1-8 of 25</p>
+                  <p>Showing 1-{filteredProducts.length} of {filteredProducts.length}</p>
                   <div className="view d-flex">
                     <a href="#"><i className="fa fa-th-large" aria-hidden="true"></i></a>
                     <a href="#"><i className="fa fa-bars" aria-hidden="true"></i></a>
                   </div>
                 </div>
                 <div className="product-sorting d-flex">
-                  <div className="sort-by-date d-flex align-items-center mr-15">
-                    <p>Sort by</p>
-                    <form>
-                      <select name="select" id="sortBydate">
-                        <option value="value">Date</option>
-                        <option value="value">Newest</option>
-                        <option value="value">Popular</option>
-                      </select>
-                    </form>
-                  </div>
-                  <div className="view-product d-flex align-items-center">
-                    <p>View</p>
-                    <form>
-                      <select name="select" id="viewProduct">
-                        <option value="value">12</option>
-                        <option value="value">24</option>
-                        <option value="value">48</option>
-                        <option value="value">96</option>
-                      </select>
-                    </form>
-                  </div>
+                  {/* Filters removed */}
                 </div>
               </div>
             </div>
           </div>
 
           <div className="row">
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <div key={product.id} className="col-6 col-sm-6 col-md-4 col-xl-4">
                 <div className="single-product-wrapper">
                   <div className="product-img">
@@ -255,17 +277,18 @@ const Shop: React.FC = () => {
                       )}
                     </Link>
                     <button 
-                      className="quick-cart-btn"
-                      onClick={() => addToCart(product, 1)}
+                      className={`quick-cart-btn ${addingToCart === product.id ? 'cart-success-animation' : ''}`}
+                      onClick={() => handleAddToCart(product)}
                       title="Add to Cart"
+                      disabled={addingToCart === product.id}
                     >
-                      <i className="fa fa-shopping-cart"></i>
+                      <i className={`fa fa-shopping-cart ${addingToCart === product.id ? 'cart-icon-bounce' : ''}`}></i>
                     </button>
                   </div>
                   <div className="product-description d-flex align-items-center justify-content-between">
                     <div className="product-meta-data">
                       <div className="line"></div>
-                      <p className="product-price">${product.price}</p>
+                      <p className="product-price">{product.price.toLocaleString('vi-VN')} đ</p>
                       <Link to={`/product/${product.id}`}>
                         <h6>{product.name}</h6>
                       </Link>

@@ -30,11 +30,11 @@ const CartItemRow: React.FC<CartItemRowProps> = ({ item, onUpdateQuantity, onRem
         <h5>{item.product.name}</h5>
       </td>
       <td className="price">
-        <span>${item.product.price}</span>
+        <span>{item.product.price.toLocaleString('vi-VN')} đ</span>
       </td>
       <td className="qty">
         <div className="qty-btn d-flex">
-          <p>Qty</p>
+                  <p>Số lượng</p>
           <div className="quantity">
             <span 
               className="qty-minus" 
@@ -61,12 +61,12 @@ const CartItemRow: React.FC<CartItemRowProps> = ({ item, onUpdateQuantity, onRem
         </div>
       </td>
       <td>
-        <button 
-          className="btn btn-danger btn-sm"
-          onClick={handleRemove}
-        >
-          Remove
-        </button>
+                    <button 
+                      className="btn btn-danger btn-sm"
+                      onClick={handleRemove}
+                    >
+                      Xóa
+                    </button>
       </td>
     </tr>
   );

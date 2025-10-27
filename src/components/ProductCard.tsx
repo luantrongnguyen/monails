@@ -34,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
       <div className="product-description d-flex align-items-center justify-content-between">
         <div className="product-meta-data">
           <div className="line"></div>
-          <p className="product-price">${product.price}</p>
+          <p className="product-price">{product.price.toLocaleString('vi-VN')} đ</p>
           <a href={`/product/${product.id}`}>
             <h6>{product.name}</h6>
           </a>
