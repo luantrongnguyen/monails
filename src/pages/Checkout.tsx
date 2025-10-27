@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { CheckoutForm, PaymentMethod } from '../types';
+import { CheckoutForm } from '../types';
 
 const Checkout: React.FC = () => {
   const [formData, setFormData] = useState<CheckoutForm>({
@@ -12,11 +11,7 @@ const Checkout: React.FC = () => {
     comment: '',
   });
 
-  const [paymentMethod, setPaymentMethod] = useState<string>('cod');
-
-  const paymentMethods: PaymentMethod[] = [
-    { type: 'cod', label: 'Thanh toán khi nhận hàng' },
-  ];
+  const [paymentMethod] = useState<string>('cod');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -31,7 +26,7 @@ const Checkout: React.FC = () => {
   };
 
   const subtotal = 140.00;
-  const delivery = 0;
+  const delivery: number = 0;
   const total = subtotal + delivery;
 
   return (
