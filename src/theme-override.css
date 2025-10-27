@@ -926,8 +926,12 @@
 }
 
 /* Filter transparent màu đen xen kẽ */
-.single-products-catagory:nth-child(odd) img {
+.single-products-catagory:nth-child(even) img {
   filter: brightness(0.7) !important;
+}
+
+.single-products-catagory:nth-child(odd) img {
+  filter: brightness(0.9) !important;
 }
 
 /* Giảm khoảng cách 2 cột trên mobile */
