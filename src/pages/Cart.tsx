@@ -6,7 +6,7 @@ const Cart: React.FC = () => {
   const { state, updateQuantity, removeFromCart } = useCart();
   const { items: cartItems, totalPrice } = state;
 
-  const delivery = 0; // Free delivery
+  const delivery: number = 0; // Free delivery
   const total = totalPrice + delivery;
 
   const handleQuantityChange = (productId: number, newQuantity: number) => {

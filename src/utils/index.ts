@@ -1,4 +1,4 @@
-import { Product, CartItem, Category, Brand, Color } from '../types';
+import { Product, CartItem } from '../types';
 
 // Product utilities
 export const formatPrice = (price: number): string => {

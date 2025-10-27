@@ -43,16 +43,10 @@ export interface PriceRange {
 export interface CheckoutForm {
   firstName: string;
   lastName: string;
-  company: string;
   email: string;
-  country: string;
   address: string;
-  city: string;
-  zipCode: string;
   phoneNumber: string;
   comment: string;
-  createAccount: boolean;
-  shipToDifferentAddress: boolean;
 }
 
 export interface PaymentMethod {

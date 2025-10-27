@@ -6,7 +6,7 @@ import { useCart } from '../contexts/CartContext';
 const ProductDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [quantity, setQuantity] = useState(1);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex] = useState(0);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
   const { addToCart } = useCart();
 

@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Product, Brand, Color } from '../types';
 import { useCart } from '../contexts/CartContext';
 
 const Shop: React.FC = () => {
-  const [selectedBrands, setSelectedBrands] = useState<string[]>(['monails']);
-  const [selectedColors, setSelectedColors] = useState<string[]>([]);
+  const [selectedBrands] = useState<string[]>(['monails']);
   const [priceRange, setPriceRange] = useState({ min: 50000, max: 100000 });
   const [addingToCart, setAddingToCart] = useState<number | null>(null);
   const { addToCart } = useCart();
@@ -129,11 +128,8 @@ const Shop: React.FC = () => {
   };
 
   const handleColorChange = (colorId: string) => {
-    setSelectedColors(prev => 
-      prev.includes(colorId) 
-        ? prev.filter(id => id !== colorId)
-        : [...prev, colorId]
-    );
+    // Color filtering logic can be implemented here if needed
+    console.log('Color changed:', colorId);
   };
 
   const renderStars = (rating: number) => {
