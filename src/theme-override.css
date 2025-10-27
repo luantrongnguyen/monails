@@ -1,0 +1,367 @@
+/* Override theme colors to #FF8DA1 */
+:root {
+  --primary-color: #FF8DA1;
+  --primary-rgb: 255, 141, 161;
+}
+
+/* Update all primary color elements */
+.amado-btn,
+.btn.amado-btn,
+.amado-btn.active,
+.amado-btn:hover,
+.amado-btn:focus {
+  background-color: #FF8DA1 !important;
+  border-color: #FF8DA1 !important;
+}
+
+.amado-btn:hover,
+.amado-btn:focus {
+  background-color: #ff6b8a !important;
+  border-color: #ff6b8a !important;
+}
+
+/* Navigation active states */
+.amado-nav ul li a.active,
+.nav-link.active {
+  color: #FF8DA1 !important;
+}
+
+/* Hover content line */
+.single-products-catagory .hover-content .line {
+  background-color: #FF8DA1 !important;
+}
+
+/* Form elements */
+.form-control:focus {
+  border-color: #FF8DA1 !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 141, 161, 0.25) !important;
+}
+
+/* Custom checkboxes */
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #FF8DA1 !important;
+  border-color: #FF8DA1 !important;
+}
+
+/* Price text */
+.single-products-catagory .hover-content p {
+  color: #FF8DA1 !important;
+}
+
+/* Star ratings */
+.fa-star {
+  color: #FF8DA1 !important;
+}
+
+/* Newsletter button */
+.newsletter-form input[type="submit"] {
+  background-color: #FF8DA1 !important;
+  border-color: #FF8DA1 !important;
+}
+
+.newsletter-form input[type="submit"]:hover {
+  background-color: #ff6b8a !important;
+  border-color: #ff6b8a !important;
+}
+
+/* Cart button */
+.cart-btn .btn.amado-btn {
+  background-color: #FF8DA1 !important;
+  border-color: #FF8DA1 !important;
+}
+
+.cart-btn .btn.amado-btn:hover {
+  background-color: #ff6b8a !important;
+  border-color: #ff6b8a !important;
+}
+
+/* Checkout button */
+.checkout-btn,
+.cart-summary .btn.amado-btn {
+  background-color: #FF8DA1 !important;
+  border-color: #FF8DA1 !important;
+}
+
+.checkout-btn:hover,
+.cart-summary .btn.amado-btn:hover {
+  background-color: #ff6b8a !important;
+  border-color: #ff6b8a !important;
+}
+
+/* Social icons hover */
+.social-info a:hover {
+  color: #FF8DA1 !important;
+}
+
+/* Footer links */
+.footer_menu a:hover {
+  color: #FF8DA1 !important;
+}
+
+/* Pagination active */
+.pagination .page-item.active .page-link {
+  background-color: #FF8DA1 !important;
+  border-color: #FF8DA1 !important;
+}
+
+/* Product price */
+.product-price {
+  color: #FF8DA1 !important;
+}
+
+/* Breadcrumb active */
+.breadcrumb-item.active {
+  color: #FF8DA1 !important;
+}
+
+/* Quantity buttons */
+.qty-minus:hover,
+.qty-plus:hover {
+  background-color: #FF8DA1 !important;
+  border-color: #FF8DA1 !important;
+}
+
+/* Search button */
+.search-content button:hover {
+  background-color: #FF8DA1 !important;
+}
+
+/* Mobile menu active */
+.mobile-nav .amado-navbar-toggler span {
+  background-color: #FF8DA1 !important;
+}
+
+/* Header active states */
+.header-area .amado-nav ul li a.active {
+  color: #FF8DA1 !important;
+}
+
+/* Cart count */
+.cart-nav span {
+  color: #FF8DA1 !important;
+}
+
+/* Discount badge */
+.amado-btn-group .btn.amado-btn {
+  background-color: #FF8DA1 !important;
+  border-color: #FF8DA1 !important;
+}
+
+.amado-btn-group .btn.amado-btn.active {
+  background-color: #ff6b8a !important;
+  border-color: #ff6b8a !important;
+}
+
+/* Quick cart button styles - Icon ở góc dưới bên phải */
+.single-products-catagory {
+  position: relative !important;
+  overflow: hidden !important; /* Đảm bảo icon không làm vỡ layout */
+}
+
+.single-products-catagory .quick-cart-btn {
+  position: absolute !important;
+  bottom: 15px !important;
+  right: 15px !important;
+  width: 45px !important;
+  height: 45px !important;
+  background-color: #FF8DA1 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  color: white !important;
+  font-size: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  z-index: 10 !important;
+  opacity: 0.9 !important;
+  box-shadow: 0 2px 8px rgba(255, 141, 161, 0.3) !important;
+}
+
+.single-products-catagory .quick-cart-btn:hover {
+  background-color: #ff6b8a !important;
+  transform: scale(1.1) !important;
+  opacity: 1 !important;
+  box-shadow: 0 4px 12px rgba(255, 141, 161, 0.4) !important;
+}
+
+.single-products-catagory .quick-cart-btn i {
+  font-size: 18px !important;
+}
+
+/* Product rating stars */
+.product-rating .fa-star {
+  color: #FF8DA1 !important;
+  margin-right: 2px !important;
+}
+
+.product-rating .fa-star.active {
+  color: #FF8DA1 !important;
+}
+
+/* Shop page cart button - Icon ở góc dưới bên phải */
+.single-product-wrapper .product-img {
+  position: relative !important;
+}
+
+.single-product-wrapper .quick-cart-btn {
+  position: absolute !important;
+  bottom: 15px !important;
+  right: 15px !important;
+  width: 45px !important;
+  height: 45px !important;
+  background-color: #FF8DA1 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  color: white !important;
+  font-size: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  z-index: 10 !important;
+  opacity: 0.9 !important;
+  box-shadow: 0 2px 8px rgba(255, 141, 161, 0.3) !important;
+}
+
+.single-product-wrapper .quick-cart-btn:hover {
+  background-color: #ff6b8a !important;
+  transform: scale(1.1) !important;
+  opacity: 1 !important;
+  box-shadow: 0 4px 12px rgba(255, 141, 161, 0.4) !important;
+}
+
+.single-product-wrapper .quick-cart-btn i {
+  font-size: 18px !important;
+}
+
+/* Responsive adjustments for cart icons */
+@media only screen and (max-width: 767px) {
+  .single-products-catagory .quick-cart-btn,
+  .single-product-wrapper .quick-cart-btn {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 10px !important;
+    right: 10px !important;
+  }
+  
+  .single-products-catagory .quick-cart-btn i,
+  .single-product-wrapper .quick-cart-btn i {
+    font-size: 16px !important;
+  }
+}
+
+/* Animation khi hover vào sản phẩm */
+.single-products-catagory:hover .quick-cart-btn,
+.single-product-wrapper:hover .quick-cart-btn {
+  opacity: 1 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Đảm bảo layout không bị vỡ */
+.products-catagories-area {
+  overflow: hidden !important;
+}
+
+.amado-pro-catagory {
+  overflow: visible !important;
+  column-count: 3 !important;
+  column-gap: 10px !important;
+}
+
+.single-products-catagory img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Fix cho masonry layout */
+.single-products-catagory {
+  display: inline-block !important;
+  width: 100% !important;
+  margin-bottom: 5px !important;
+}
+
+.single-products-catagory a {
+  display: block !important;
+  position: relative !important;
+}
+
+.single-products-catagory img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Fix mobile drawer - Sử dụng class .active thay vì .bp-xs-on */
+@media only screen and (max-width: 767px) {
+  .mobile-nav {
+    display: flex !important;
+  }
+  
+  .main-content-wrapper .header-area {
+    left: -320px !important;
+    transition: left 500ms ease !important;
+  }
+  
+  .main-content-wrapper .header-area.active {
+    left: 0 !important;
+  }
+  
+  .main-content-wrapper .header-area .nav-close {
+    display: block !important;
+  }
+}
+
+/* Responsive columns */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .amado-pro-catagory {
+    column-count: 2 !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .amado-pro-catagory {
+    column-count: 1 !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .amado-pro-catagory {
+    column-count: 2 !important;
+    column-gap: 8px !important;
+  }
+  
+  .single-products-catagory {
+    margin-bottom: 3px !important;
+  }
+  
+  /* Giảm font size tên item trên mobile */
+  .single-products-catagory .hover-content h4 {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .single-products-catagory .hover-content p {
+    font-size: 11px !important;
+  }
+  
+  /* Giảm font size rating stars trên mobile */
+  .single-products-catagory .product-rating .fa-star {
+    font-size: 10px !important;
+  }
+  
+  /* Chỉ padding 2 bên cho list item */
+  .products-catagories-area {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .amado-pro-catagory {
+    column-count: 2 !important;
+  }
+}
